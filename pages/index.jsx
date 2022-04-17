@@ -1,20 +1,26 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import Layout from '../components/layouts'
-import logo from '../public/favicon-32x32.png'
 
 export default function Home() {
   return (
     <Layout>
-      <div className="flex flex-col justify-center items-center gap-4 h-screen text-center">
-        <Image src={logo} alt='Nizar Baihaqi Logo' />
-        <h1>Nextjs + Tailwindcss</h1>
-        <p>Also meta tags generator</p>
-        <Link href='/another-page'>
-          <a>Go to another page</a>
-        </Link>
-        <small>Created by <a href="http://nizarbaihaqi.com" target="_blank" rel="noopener noreferrer">Ijay Baihaqi</a></small>
+      <h1 className='text-center text-3xl my-8'>Todo app</h1>
+      <div className='max-w-2xl px-3 flex flex-col gap-3 mb-3'>
+        <div>
+          <input type="checkbox" name="todoItem" id="todoItem" />
+          <label htmlFor="todoItem">Buy a macbook</label>
+        </div>
+        <div>
+          <input type="checkbox" name="todoItem1" id="todoItem1" />
+          <label htmlFor="todoItem1">Buy a mac cheese</label>
+        </div>
+        <div>
+          <input type="checkbox" name="todoItem2" id="todoItem2" />
+          <label htmlFor="todoItem2">Buy a cookbook</label>
+        </div>
       </div>
+      <form className='max-w-2xl px-3'>
+        <input className='w-full' type="text" name="newTodo" id="newTodo" />
+      </form>
     </Layout>
   )
 }
